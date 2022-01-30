@@ -16,22 +16,21 @@ CATAGORIES = ["alpha","beta","gamma","lambda","phi","pi","sigma","theta"]
 print(os.listdir(inputos))
 
 #%%
-IMG_SIZE = 400
+IMG_SIZE = 45
 
 
 
 for category in CATAGORIES:
-    path = os.path.join(DATADIR,category) #path to dir
+    path = os.path.join(DATADIR,category)
     for img in os.listdir(path):
         img_array = cv2.imread(os.path.join(path,img))
 
 
 
-IMG_SIZE = 45
 training_data = []
 def create_training_data():
     for category in CATAGORIES:
-        path = os.path.join(DATADIR,category) #path to dir
+        path = os.path.join(DATADIR,category)
         class_num = CATAGORIES.index(category)
         for img in os.listdir(path):
             try:
