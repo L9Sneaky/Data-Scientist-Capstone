@@ -26,15 +26,15 @@ Since the dataset used has alot of classes ive only picked 4 which are (Alpha, B
 The dataset was split into training and testing set by 0.25 ratio and 0.2 validation ratio on the training set, the model used is a Convolution Neural network model with 3 convolution layers and 5 hidden layers and an output layer.
 ![Model Evaluation Pic](Screenshots/atom_hmGJf8fkBi.png)
 ### Hyperparameter tuning
-initially, the hyperparameters were to run 10 epochs with a  batch size 10
+initially, the hyperparameters were to run 10 epochs with a  batch size 10.
 ![Model Validation Pic 1](Screenshots/atom_lCtq2YfUxI.png)
 
 ## Wep app
-After running the app.py and opening the local website
+After running the app.py and opening the local website.
 ![Web app init pic 1](Screenshots/chrome_OIiidzIS3e.png)
-upload the handwritten letter
+upload the handwritten letter.
 ![Example pic 1](Screenshots/Untitled.jpg)
-and result will show after pressing the upload button
+and result will show after pressing the upload button.
 ![Example pic 2](Screenshots/chrome_SYkheHt98V.png)
 
 
