@@ -38,14 +38,14 @@ git clone https://github.com/L9Sneaky/Data-Scientist-Capstone.git
 ### Data Exploration
 Since the dataset used has alot of classes ive only picked 4 which are (Alpha, Beta, Pi, Theta) with a total of 9,700 observations, and since the dataset is composed of images, there is no need to remove any of them, and since the Dataset is balanced there is no need to tamper with the data.
 ### Data Visualization
-![Data Visualization Pic](screenshots/atom_RzH5HsqdP9.png)
+![Data Visualization Pic](Screenshots/atom_RzH5HsqdP9.png)
 
 ## Results
 ### Model Evaluation and Validation
 The dataset was split into training and testing set by 0.25 ratio and 0.2 validation ratio on the training set, the model used is a Convolution Neural network model with 3 convolution layers and 5 hidden layers and an output layer.
-![Model Evaluation Pic](screenshots/atom_hmGJf8fkBi.png)
+![Model Evaluation Pic](Screenshots/atom_hmGJf8fkBi.png)
 ### Validation
-![Model Validation Pic](screenshots/atom_4bNP52CcHK.png)
+![Model Validation Pic](Screenshots/atom_4bNP52CcHK.png)
 
 ## Conclusion
 In Conclusion the model can accurately predict 99% of the time but it is critical to have a bit of error to not be biased on prediction.
