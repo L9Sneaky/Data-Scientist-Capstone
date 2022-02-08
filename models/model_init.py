@@ -12,10 +12,12 @@ import time
 print('Loading Data')
 X = pickle.load(open("X.pickle", "rb"))
 y = pickle.load(open("y.pickle", "rb"))
-X= X/255.0
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=1)
+X = X/255.0
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
 CATAGORIES = ["alpha","beta","pi","theta"]
+#%%
+print(X.shape)
+print(X.shape[1:])
 #%%
 print('Initializing Model')
 model = Sequential()
@@ -51,14 +53,14 @@ model.add(Activation("relu"))
 model.add(Dense(128))
 model.add(Activation("relu"))
 
-model.add(Dense(4))
+model.add(Dense(len(CATAGORIES)))
 model.add(Activation('softmax'))
 
 model.compile(optimizer="adam",loss="sparse_categorical_crossentropy",metrics=['accuracy'])
 #%%
-n=4
+n=3
 
-history = model.fit(X_train, y_train, epochs=n ,batch_size=32,verbose=1, validation_split=0.2 , shuffle = True, use_multiprocessing = True)
+history = model.fit(X_train, y_train, epochs=n ,batch_size=10,verbose=1, validation_split=0.2)
 model.save("model.model")
 #%%
 test_loss, test_acc = model.evaluate(X_test, y_test, verbose=2)

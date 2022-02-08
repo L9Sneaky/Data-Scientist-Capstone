@@ -17,7 +17,7 @@ CATAGORIES = ["alpha","beta","pi","theta"]
 print(os.listdir(inputos))
 
 #%%
-IMG_SIZE = 45
+IMG_SIZE = 64
 
 
 

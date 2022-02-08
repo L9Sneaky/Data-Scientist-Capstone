@@ -11,9 +11,9 @@ import cv2
 import os
 import time
 
-model = keras.models.load_model("F:\Books\T10\sdaia t5\MTA Project\Data-Scientist-Capstone\models\model.model")
+model = keras.models.load_model("F:\Books\T10\sdaia t5\MTA Project\Data-Scientist-Capstone\model.model")
 model.compile(optimizer="adam",loss="sparse_categorical_crossentropy",metrics=['accuracy'])
-CATAGORIES = ["alpha","beta","gamma","lambda","phi","pi","sigma","theta"]
+CATAGORIES = ["alpha","beta","pi","theta"]
 
 
 
@@ -48,7 +48,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            IMG_SIZE = 45
+            IMG_SIZE = 64
             bruh2 = cv2.imread(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             bruh2 = bruh2/255.0
             bruh2 = cv2.resize(bruh2,(IMG_SIZE, IMG_SIZE))
