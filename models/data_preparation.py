@@ -4,14 +4,15 @@ import os
 import cv2
 import random
 import pickle
-
+import pandas as pd
 from rich.progress import track
+import seaborn as sns
 #%%
 
 
 inputos = "F:\Books\T10\sdaia t5\MTA Project\Data-Scientist-Capstone\data/"
 DATADIR = inputos;
-CATAGORIES = ["alpha","beta","gamma","lambda","phi","pi","sigma","theta"]
+CATAGORIES = ["alpha","beta","pi","theta"]
 
 print(os.listdir(inputos))
 
@@ -55,13 +56,19 @@ for features, label in track(training_data):
     X.append(features)
     y.append(label)
 
-
-X = np.array(X)/255.0
-
-X = np.array(X)#.reshape(-1,IMG_SIZE,IMG_SIZE,1)
+X = np.array(X)
 
 y = np.array(y)
 #%%
+ym=pd.DataFrame(y)
+ym.head()
+cat=[]
+for x in range(len(y)):
+    cat.append(CATAGORIES[y[x]])
+ym['cata']=cat
+ym['cata'].describe()
+sns.histplot(data=ym['cata'])
+
 
 #%%
 pickle_out = open("X.pickle" , "wb")
