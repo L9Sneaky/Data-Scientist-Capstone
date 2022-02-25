@@ -9,12 +9,19 @@
 
 ## Project Definition
 ### Project Overview
-For this project, we used Deep Learning to be able to predict greek letters, by using a pre-existing dataset from Kaggle (Refernced below).
-### Strategy to solve the problem
-Due to applications being hard to recognize greeks letters in mathematical equations, this project will be able to recognize greek letters in-between mathematical equations,
-thus we use deep learning to be able to predict users handwritten letters.
+Converting paper to digital documents with the objective of better safeguarding old records is one of the issues we face today. As a result, programming machines to read ancient texts will improve efficiency. Using a pre-existing dataset from Kaggle, we applied Deep Learning to predict Greek letters (Referenced below).
+
+### Problem Statement
+We are given a dataset from Kaggle that has 10,000 grayscale images with the dimensions of 45 widths, 45 hights, and a depth of 1 since its greyscale. The model needs to be 0.9 accurate to be able to read greek letters in between mathematical equations.
+
 ### Metrics
-We use Training and Validation Accuracy and Loss to see our models preformance.
+We use Accuracy Score to know how accurate our model is. To accomplish that, we split the data into 3 sections, Training, Testing, and Validating.
+
+We train the model using the training data, and test the accuracy using the testing data then we get the score using the equation below:
+Accuracy Score = (Number of features classified correctly) / (Number of actual features)
+
+The reason why we use accuracy score as our metric is that it's a convolution metric since our model is a classification prediction model.
+
 
 ## Analysis
 ### EDA
@@ -23,23 +30,29 @@ Since the dataset used has alot of classes ive only picked 4 which are (Alpha, B
 
 
 ## Modeling
-The dataset was split into training and testing set by 0.25 ratio and 0.2 validation ratio on the training set, the model used is a Convolution Neural network model with 3 convolution layers and 5 hidden layers and an output layer.
+For preprocessing we didn't change much since the dimensions of the images are small. Furthermore, the colour of the data did not need to be reduced since its already greyscale and not RGB. So the next step was to split the data into training and testing set by 0.75 and 0.25 out of the data and for the validation it was 0.2 out of the training dataset. The model used is a Convolution Neural network model with 3 convolution layers and 5 hidden layers and an output layer. For the convolution layer, each layer extracts 32 features and 3x3 kernel and the pooling 2x2 max-pooling kernel. In addition, a ReLU activation function has been placed between each layer, except for the last layer (output) the function used is softmax considering that it’s a categorical output.
+
 ![Model Evaluation Pic](Screenshots/atom_hmGJf8fkBi.png)
-### Hyperparameter tuning
-initially, the hyperparameters were to run 10 epochs with a  batch size 10.
+
 ![Model Validation Pic 1](Screenshots/atom_lCtq2YfUxI.png)
 
 ## Wep app
 After running the app.py and opening the local website.
+
 ![Web app init pic 1](Screenshots/chrome_OIiidzIS3e.png)
+
 upload the handwritten letter.
+
 ![Example pic 1](Screenshots/Untitled.jpg)
+
 and result will show after pressing the upload button.
+
 ![Example pic 2](Screenshots/chrome_SYkheHt98V.png)
 
 
 ## Conclusion
-In Conclusion the model can accurately predict 99% of the time but it is critical to have a bit of error to not be biased on prediction.
+In conclusion, we are trying to conversion of paper documents to digital documents with the goal of better safeguarding old records. Programming machine learning to interpret ancient writings will boost efficiency as a result. CNN was used to predict Greek letters using a pre-existing dataset from Kaggle. In the end, the model can successfully forecast 99 percent of the time, but a little margin of error is required to avoid relying on prediction.
+
 ## Improvement
 For future work, I would add more to the dataset to have more classes than 4 and have a better user-friendly UI to make it easier for the user to use.
 
